@@ -9,6 +9,7 @@ commands:
   god:
     description: Become like the big JC himself
     usage: /<command>
+    permission: exampleplugin.god
     aliases:
       - jc
       - odin
@@ -16,5 +17,24 @@ commands:
   eat:
     description: Set current food level to full
     usage: /<command>
+    permission: exampleplugin.eat
     aliases:
       - feed
+  pog:
+    description: Become pog
+    usage: /<command>
+permissions:
+  exampleplugin.pog:
+    description: Allows a user to be Pog. There is only one Pog so be very careful who you give this to.
+    default: op
+    children:
+      exampleplugin.god: true
+      exampleplugin.eat: true
+  exampleplugin.god:
+    description: Allows a user to be like a Pog but not quite as powerful.
+    default: op
+    children:
+      exampleplugin.eat: true
+  exampleplugin.eat:
+    description: Alright it just feeds the player so what?
+    default: op
