@@ -2,6 +2,7 @@ package me.mickpoletti.examplePlugin;
 
 import me.mickpoletti.examplePlugin.commands.FeedCommand;
 import me.mickpoletti.examplePlugin.commands.GodCommand;
+import me.mickpoletti.examplePlugin.listeners.DeathListener;
 import me.mickpoletti.examplePlugin.listeners.JoinLeaveListener;
 import me.mickpoletti.examplePlugin.listeners.ShearSheepListener;
 import me.mickpoletti.examplePlugin.listeners.XPBottleBreakListener;
@@ -27,26 +28,18 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
         // Register join leave messages
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
-
+        // Register death handler
+        getServer().getPluginManager().registerEvents(new DeathListener(this), this);
         // Handle commands
         getCommand("god").setExecutor(new GodCommand());
         // Register feed command
         getCommand("eat").setExecutor(new FeedCommand());
     }
-
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         System.out.println("Goodbye.");
     }
-
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        String username = e.getPlayer().getName();
-        String message = "Hey, \u00A73" + username + "\u00A7f I don't like your attitude.";
-        e.setJoinMessage(message);
-    }
-
     @EventHandler
     public void onLeaveBed(PlayerBedLeaveEvent e) {
         Player player = e.getPlayer();
