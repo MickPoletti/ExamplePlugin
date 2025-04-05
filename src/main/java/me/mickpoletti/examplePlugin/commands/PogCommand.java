@@ -16,7 +16,7 @@ public class PogCommand implements CommandExecutor {
                         + ChatColor.BOLD + ChatColor.DARK_PURPLE + "POG");
             } else {
                 p.sendMessage("YOU ARE "
-                        + ChatColor.BOLD + ChatColor.RED + ChatColor.UNDERLINE + "NOT"
+                        + ChatColor.BOLD + ChatColor.DARK_RED + ChatColor.UNDERLINE + "NOT"
                         + ChatColor.RESET + " POG!!!!!!! ☹");
             }
         }

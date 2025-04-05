@@ -3,6 +3,7 @@ package me.mickpoletti.examplePlugin;
 import me.mickpoletti.examplePlugin.commands.FeedCommand;
 import me.mickpoletti.examplePlugin.commands.GodCommand;
 import me.mickpoletti.examplePlugin.commands.PogCommand;
+import me.mickpoletti.examplePlugin.commands.RepeatCommand;
 import me.mickpoletti.examplePlugin.listeners.DeathListener;
 import me.mickpoletti.examplePlugin.listeners.JoinLeaveListener;
 import me.mickpoletti.examplePlugin.listeners.ShearSheepListener;
@@ -35,6 +36,7 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         // Register feed command
         getCommand("eat").setExecutor(new FeedCommand());
         getCommand("pog").setExecutor(new PogCommand());
+        getCommand("repeat").setExecutor(new RepeatCommand());
     }
     @Override
     public void onDisable() {

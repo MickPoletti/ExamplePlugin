@@ -6,23 +6,24 @@ prefix: Example
 authors: [ MickPoletti ]
 description: Example Plugin for spigot
 commands:
+  eat:
+    description: Set current food level to full
+    usage: /<command>
+    aliases:
+      - feed
   god:
     description: Become like the big JC himself
     usage: /<command>
-    permission: exampleplugin.god
     aliases:
       - jc
       - odin
       - mars
-  eat:
-    description: Set current food level to full
-    usage: /<command>
-    permission: exampleplugin.eat
-    aliases:
-      - feed
   pog:
     description: Become pog
     usage: /<command>
+  repeat:
+    description: Repeats the arguments given back to the issuer
+    usage: /<command> arg1 arg2 ... argX
 permissions:
   exampleplugin.pog:
     description: Allows a user to be Pog. There is only one Pog so be very careful who you give this to.
