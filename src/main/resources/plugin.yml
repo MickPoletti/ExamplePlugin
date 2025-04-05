@@ -1,0 +1,7 @@
+name: ExamplePlugin
+version: '1.0-SNAPSHOT'
+main: me.mickpoletti.examplePlugin.ExamplePlugin
+api-version: '1.21'
+prefix: Example
+authors: [ MickPoletti ]
+description: Example Plugin for spigot
