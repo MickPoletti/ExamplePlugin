@@ -26,7 +26,7 @@ public class JoinLeaveListener implements Listener {
         String username = e.getPlayer().getDisplayName();
         // Instead of using the color id as above we'll use the ChatColor class and bold the username
         String message = "Hey, " + ChatColor.AQUA + ChatColor.BOLD +
-                          username + ChatColor.RESET + ChatColor.WHITE + "get outta here!";
+                          username + ChatColor.RESET + ChatColor.WHITE + " get outta here!";
         e.setQuitMessage(message);
         // Alternatively we could concat the message in the function call
         // e.setQuitMessage("Hey, \u00A73" + username + "\u00A7f get outta here!");
