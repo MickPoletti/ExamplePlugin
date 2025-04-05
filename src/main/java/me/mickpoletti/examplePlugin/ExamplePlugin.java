@@ -1,5 +1,7 @@
 package me.mickpoletti.examplePlugin;
 
+import me.mickpoletti.examplePlugin.commands.FeedCommand;
+import me.mickpoletti.examplePlugin.commands.GodCommand;
 import me.mickpoletti.examplePlugin.listeners.JoinLeaveListener;
 import me.mickpoletti.examplePlugin.listeners.ShearSheepListener;
 import me.mickpoletti.examplePlugin.listeners.XPBottleBreakListener;
@@ -13,10 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 // This is a first example of how to use a listener, however they should be
 // separated into their own classes.
 public final class ExamplePlugin extends JavaPlugin implements Listener {
-
+    // Plugin startup logic
     @Override
     public void onEnable() {
-        // Plugin startup logic
         System.out.println("Hello World!");
         // Register your events here
         getServer().getPluginManager().registerEvents(this, this);
@@ -26,6 +27,11 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
         // Register join leave messages
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
+
+        // Handle commands
+        getCommand("god").setExecutor(new GodCommand());
+        // Register feed command
+        getCommand("eat").setExecutor(new FeedCommand());
     }
 
     @Override

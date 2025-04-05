@@ -5,3 +5,16 @@ api-version: '1.21'
 prefix: Example
 authors: [ MickPoletti ]
 description: Example Plugin for spigot
+commands:
+  god:
+    description: Become like the big JC himself
+    usage: /<command>
+    aliases:
+      - jc
+      - odin
+      - mars
+  eat:
+    description: Set current food level to full
+    usage: /<command>
+    aliases:
+      - feed
