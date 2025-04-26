@@ -26,7 +26,7 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         // Register never nude sheep event
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
         // Register join leave messages
-        getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
+        getServer().getPluginManager().registerEvents(new JoinLeaveListener(this), this);
         // Register death handler
         getServer().getPluginManager().registerEvents(new DeathListener(this), this);
         getServer().getPluginManager().registerEvents(new SpawnListener(this), this);
@@ -38,6 +38,7 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         getCommand("fwoe_up").setExecutor(new FwoeUpCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getCommand("setmessage").setExecutor(new SetMessageCommand(this));
     }
     @Override
     public void onDisable() {

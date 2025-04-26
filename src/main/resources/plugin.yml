@@ -37,6 +37,9 @@ commands:
   spawn:
     description: Teleports the user to the world's spawn point if it is set
     usage: /<command>
+  setmessage:
+    description: Sets the server's join message
+    usage: /<command> <insert message here>
 permissions:
   exampleplugin.pog:
     description: Allows a user to be Pog. There is only one Pog so be very careful who you give this to.
@@ -61,3 +64,6 @@ permissions:
   exampleplugin.spawn:
     description: Teleports the user to the world's spawn point if set
     default: true
+  exampleplugin.setmessage:
+    description: Sets the server's join message
+    default: op
