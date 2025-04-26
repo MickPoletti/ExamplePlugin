@@ -24,6 +24,19 @@ commands:
   repeat:
     description: Repeats the arguments given back to the issuer
     usage: /<command> arg1 arg2 ... argX
+  fwoe_up:
+    description: Makes caller or target fwoe up and sets their food level to 0
+    usage: /<command> <player_name>
+    aliases:
+      - i_gonna_do_it
+  setspawn:
+    description: Sets the world's spawn to the user's current location
+    usage: /<command>
+    aliases:
+      - ss
+  spawn:
+    description: Teleports the user to the world's spawn point if it is set
+    usage: /<command>
 permissions:
   exampleplugin.pog:
     description: Allows a user to be Pog. There is only one Pog so be very careful who you give this to.
@@ -39,3 +52,12 @@ permissions:
   exampleplugin.eat:
     description: Alright it just feeds the player so what?
     default: op
+  exampleplugin.fwoe_up:
+    description: It makes the user or the player argument given fwoe up
+    default: op
+  exampleplugin.setspawn:
+    description: Sets the world's spawn to the user's current location
+    default: op
+  exampleplugin.spawn:
+    description: Teleports the user to the world's spawn point if set
+    default: true

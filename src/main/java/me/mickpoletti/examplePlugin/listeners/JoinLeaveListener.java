@@ -12,7 +12,7 @@ public class JoinLeaveListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         String username = p.getDisplayName();
-        // Using the color codes isn't recommended but can still be done it needed
+        // Using the color codes isn't recommended but can still be done if needed
         String message = "Hey, \u00A73" + username + "\u00A7f I don't like your attitude.";
         if (p.hasPlayedBefore()) {
             message = "Well, well, well if it isn't "

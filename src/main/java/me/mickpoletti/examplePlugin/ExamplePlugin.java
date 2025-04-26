@@ -1,13 +1,7 @@
 package me.mickpoletti.examplePlugin;
 
-import me.mickpoletti.examplePlugin.commands.FeedCommand;
-import me.mickpoletti.examplePlugin.commands.GodCommand;
-import me.mickpoletti.examplePlugin.commands.PogCommand;
-import me.mickpoletti.examplePlugin.commands.RepeatCommand;
-import me.mickpoletti.examplePlugin.listeners.DeathListener;
-import me.mickpoletti.examplePlugin.listeners.JoinLeaveListener;
-import me.mickpoletti.examplePlugin.listeners.ShearSheepListener;
-import me.mickpoletti.examplePlugin.listeners.XPBottleBreakListener;
+import me.mickpoletti.examplePlugin.commands.*;
+import me.mickpoletti.examplePlugin.listeners.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +15,10 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         System.out.println("Hello World!");
+        // config.yml handling
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
         // Register your events here
         getServer().getPluginManager().registerEvents(this, this);
         // Register XP bottle break event
@@ -31,12 +29,15 @@ public final class ExamplePlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
         // Register death handler
         getServer().getPluginManager().registerEvents(new DeathListener(this), this);
+        getServer().getPluginManager().registerEvents(new SpawnListener(this), this);
         // Handle commands
         getCommand("god").setExecutor(new GodCommand());
-        // Register feed command
         getCommand("eat").setExecutor(new FeedCommand());
         getCommand("pog").setExecutor(new PogCommand());
         getCommand("repeat").setExecutor(new RepeatCommand());
+        getCommand("fwoe_up").setExecutor(new FwoeUpCommand());
+        getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
+        getCommand("spawn").setExecutor(new SpawnCommand(this));
     }
     @Override
     public void onDisable() {
